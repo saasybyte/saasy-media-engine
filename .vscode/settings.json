@@ -1,0 +1,15 @@
+{
+  "cmake.configureSettings": {
+    "CMAKE_TOOLCHAIN_FILE": "${workspaceFolder}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  },
+  "clangd.arguments": [
+    "--clang-tidy",
+    "--header-insertion=never",
+    "--compile-commands-dir=${workspaceFolder}/build"
+  ],
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "editor.formatOnSave": true
+}

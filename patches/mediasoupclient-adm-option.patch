@@ -1,0 +1,36 @@
+--- a/include/PeerConnection.hpp
++++ b/include/PeerConnection.hpp
+@@ -1,6 +1,7 @@
+ #ifndef MSC_PEERCONNECTION_HPP
+ #define MSC_PEERCONNECTION_HPP
+
++#include <api/scoped_refptr.h>
+ #include <json.hpp>
+ #include <api/peer_connection_interface.h> // webrtc::PeerConnectionInterface
+ #include <future>                          // std::promise, std::future
+@@ -136,8 +137,13 @@
+
+ 	public:
+ 		struct Options
+ 		{
+ 			webrtc::PeerConnectionInterface::RTCConfiguration config;
+ 			webrtc::PeerConnectionFactoryInterface* factory{ nullptr };
++			// Custom AudioDeviceModule for headless environments.
++			// When factory is nullptr, mediasoupclient creates its own internal
++			// factory. This field lets you inject a custom ADM into that internal
++			// factory so it doesn't require real audio hardware.
++			webrtc::scoped_refptr<webrtc::AudioDeviceModule> adm{ nullptr };
+ 		};
+
+ 	public:
+--- a/src/PeerConnection.cpp
++++ b/src/PeerConnection.cpp
+@@ -99,7 +99,7 @@
+ 			this->peerConnectionFactory = webrtc::CreatePeerConnectionFactory(
+ 			  this->networkThread.get(),
+ 			  this->workerThread.get(),
+ 			  this->signalingThread.get(),
+-			  nullptr /*default_adm*/,
++			  (options != nullptr ? options->adm : nullptr),
+ 			  webrtc::CreateBuiltinAudioEncoderFactory(),
+ 			  webrtc::CreateBuiltinAudioDecoderFactory(),

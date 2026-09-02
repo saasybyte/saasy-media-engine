@@ -1,0 +1,9 @@
+.cache/
+.claude/settings.local.json
+build/
+# Prebuilt vendored libs: fetched from GitHub Releases (make fetch-prebuilt) or built from source (make vendor-deps)
+third_party/prebuilt/
+vcpkg/
+vcpkg_installed/
+vendor-build/
+listening-engine/scripts/verifications/.venv/
