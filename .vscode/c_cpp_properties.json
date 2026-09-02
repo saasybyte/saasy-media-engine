@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/third_party/prebuilt/linux-x64/include",
+                "${workspaceFolder}/third_party/prebuilt/linux-x64/include/webrtc",
+                "${workspaceFolder}/build/generated"
+            ],
+            "defines": [
+                "WEBRTC_POSIX",
+                "WEBRTC_LINUX",
+                "SPDLOG_COMPILED_LIB",
+                "SPDLOG_FMT_EXTERNAL"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        },
+        {
+            "name": "macOS",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/third_party/prebuilt/darwin-arm64/include",
+                "${workspaceFolder}/third_party/prebuilt/darwin-arm64/include/webrtc",
+                "${workspaceFolder}/build/generated"
+            ],
+            "defines": [
+                "WEBRTC_POSIX",
+                "WEBRTC_MAC",
+                "SPDLOG_COMPILED_LIB",
+                "SPDLOG_FMT_EXTERNAL"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,36 @@
+# Build artifacts
+build/
+vendor-build/
+
+# vcpkg (cloned during docker build)
+vcpkg/
+
+# Git
+.git/
+.gitignore
+.gitmodules
+
+# IDE and tooling
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+
+# Linter/formatter configs
+.clang-format
+.clang-tidy
+
+# Documentation
+CLAUDE.md
+
+# Logs and temp files
+*.log
+compile_commands.json
+
+# Prebuilt libs (engines COPY from vendor image, not local)
+third_party/prebuilt/
+
+# Keep third_party/saasy-proto/ - needed for proto generation
+# Keep scripts/ - vendor script needed for vendor image
+# Keep listening-engine/models/ and assets/ - needed at runtime

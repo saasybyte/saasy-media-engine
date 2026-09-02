@@ -1,0 +1,19 @@
+Checks: >
+  -*,
+  bugprone-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  cert-*,
+  concurrency-*,
+  misc-*,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers,
+  -cert-err58-cpp
+
+WarningsAsErrors: 'bugprone-*,clang-analyzer-*,concurrency-*'
+HeaderFilterRegex: '^(speaking-engine|listening-engine)/.*'
+AnalyzeTemporaryDtors: false

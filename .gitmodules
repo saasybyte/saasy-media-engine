@@ -1,0 +1,3 @@
+[submodule "third_party/saasy-proto"]
+	path = third_party/saasy-proto
+	url = https://github.com/saasybyte/saasy-proto.git

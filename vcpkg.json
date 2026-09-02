@@ -1,0 +1,17 @@
+{
+  "name": "media-engine",
+  "version-string": "0.1.0",
+  "builtin-baseline": "5448758b39f8010ebef77a0bfe61e0e87c803ebb",
+  "dependencies": [
+    {
+      "name": "grpc",
+      "features": [ "codegen" ]
+    },
+    "protobuf",
+    "spdlog",
+    "boost-system",
+    "boost-thread",
+    "boost-lockfree",
+    "boost-circular-buffer"
+  ]
+}
